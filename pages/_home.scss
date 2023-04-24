@@ -1,0 +1,159 @@
+.W-section{
+    margin: 0 auto;
+    max-width: 1250px;
+    
+}
+
+.W-container{
+    margin-bottom: 4em;
+}
+
+.hidden{
+    display: none;
+}
+
+.hero-section{
+    display: grid ;
+}
+
+
+.main{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "head-article head-article sidebar"
+        "head-article head-article sidebar"
+        "articles articles articles";
+    column-gap: 1.5rem;
+
+
+.news{
+    display: grid;
+    grid-area: head-article;
+    &__card{
+        display: grid;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    &__info{
+        @include flex-column;
+        justify-content: space-between;
+    }
+
+    &__heading{
+        @include flex-row;
+        margin-top: 2em;
+        gap: 2em;
+
+        &--heading{
+            font-weight: 800;
+            font-size: 47px;
+        }
+    }
+}
+
+.new{
+    grid-area: sidebar;
+    padding: 18px;
+
+    h1{
+        color: $primary-color;
+        font-size: 44px;
+    }
+
+    p{
+        color: $fourth-color;
+    }
+
+    background-color: $sixth-color;
+    @include flex-column;
+    justify-content: space-between;
+
+    &__info{
+        color: $third-color;
+        border-bottom: 1px solid $fifth-color;
+
+        & p{
+            margin-bottom: 30px;
+        }
+
+        &:last-child{
+            border: none;
+        }
+    }
+
+    a{
+        color: $third-color;
+    }
+
+    &__heading:hover{
+        color: $primary-color;
+    }
+}
+
+.technology{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-area: articles;
+    column-gap: 1.5rem;
+
+    h2,h3,h4,p{
+        margin: 0;
+    }
+
+    h3{
+        font-size: 15px;
+    }
+
+    h2{
+        font-size: 33px;
+    }
+
+    &__header{
+        color: $sixth-color;
+
+        &:hover{
+            color:$secondary-color;
+        }
+    }
+
+    &__list{
+        @include flex-column;
+        justify-content: space-between;
+    }
+
+    &__card{
+        @include flex-row;
+        gap: 1em;
+    }
+
+    &__s-no{
+        color: $fourth-color;
+    }
+}
+}
+@include small-screen{
+    .main{
+        display: block;
+
+    .technology{
+        @include flex-row;
+        flex-direction: column;
+        gap: 2em;
+    }
+
+    .news{
+        @include flex-column;
+        flex-direction: column;
+    }
+
+    .news__card {
+        max-width: 98vw;
+    }
+
+    .news__heading{
+        flex-direction: column;
+    }
+}
+}

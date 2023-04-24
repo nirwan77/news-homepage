@@ -1,0 +1,14 @@
+.primary-button{
+    cursor: pointer;
+    font-size: 18px;
+    background: hsl(5, 85%, 63%);
+    color: hsl(36, 100%, 99%);
+    width: 180px;
+    letter-spacing: 0.2rem;
+    height: 51px;
+    border: none;
+
+    &:hover{
+        background: $sixth-color;
+    }
+}

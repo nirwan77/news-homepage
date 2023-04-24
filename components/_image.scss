@@ -1,0 +1,32 @@
+.info__image{
+    max-width: 100%;
+
+    @include small-screen{
+        display: none;
+    }
+
+    @include big-screen{
+        width:51vw;
+    }
+}
+
+.info__image--mobile{
+    display: none;
+
+    @include small-screen{
+        display: block;
+        width: 91vw;
+        height: 50vh;
+        object-fit: cover;
+    }
+}
+
+.technology__image{
+    width: 136px;
+    height: 141px;
+
+    @include small-screen{
+        max-width: 130px;
+        height: 150px;
+    }
+}

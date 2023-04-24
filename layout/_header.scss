@@ -1,0 +1,141 @@
+nav{
+    @include flex-row;
+    justify-content: space-between;
+    align-items: center;
+
+    .mobile__toggle{
+        display: none;
+    }
+
+    .nav__button{
+        border: none;
+        background-color: white;
+        display: none;
+    }
+
+    .nav__list{
+        @include flex-row;
+        gap: 3em;
+        
+        li{
+            font-size: 20px;
+            
+            a{
+                color: $sixth-color;
+
+                &:hover{
+                    color: $secondary-color;
+                }
+            }
+        }
+    }
+}
+
+
+.sidebar{
+    display: none;
+}
+
+.menu-close{
+    display: none;
+}
+
+@include small-screen{
+    .hidden{
+        display: block;
+    }
+
+    .menu-close{
+        display: block;
+        position: fixed;
+        top: 2em;
+        right: 3em;
+        opacity: 0;
+    }
+
+    .menu-close-active{
+        z-index: 999;
+        opacity: 1;
+    }
+
+    .menu-open-active{
+        display: none;
+    }
+
+    nav{
+        position: relative;
+
+        .nav__button{
+            display: block;
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            z-index: 99;
+        }
+
+        .nav__list-open{
+            transform: translateX(0%);
+        }
+
+
+        .sidebar{
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            top: 1em;
+            z-index: 1000;
+            right: 1em;
+        }
+
+        .nav__list{
+            margin: 0;
+            padding: 10em 2em;
+            @include flex-column;
+            background: white;
+            position: fixed;
+            inset: 0 0 0 30%;
+            transform: translateX(100%);
+            transition: transform 250ms;
+
+        }
+
+        .nav__list-open {
+            transform: translateX(0%);
+        }
+
+        .mobile__toggle{
+            display: block;
+            position: absolute;
+            background-repeat: no-repeat;
+            top: 1rem;
+            background: url(/main/images/icon-menu.svg);
+            right: 1rem;
+            width: 2rem;
+            height: 2em;
+            border: 0 ;
+            background-repeat: no-repeat;
+            background-size: cover;
+            z-index: 999;
+        }
+
+        .nav__overlay{
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100vw;
+            background: rgba(0,0,0,0.2);
+        }
+
+        .nav__overlay-active{
+            display: block;
+        }
+
+        
+    }
+
+    
+    
+    
+}

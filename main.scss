@@ -1,0 +1,18 @@
+@import 
+    "../news-homepage/abstract/variable",
+    "../news-homepage/abstract/mixin"
+;
+
+@import 
+    "../news-homepage/base/reset",
+    "../news-homepage/base/typography"
+;
+
+@import 
+    "../news-homepage/components/image",
+    "../news-homepage/components/button"
+;
+
+@import "../news-homepage/layout/header";
+
+@import "../news-homepage/pages/home";

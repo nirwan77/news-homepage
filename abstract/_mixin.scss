@@ -1,0 +1,21 @@
+@mixin flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin small-screen{
+    @media only screen and (max-width:768px) {
+        @content;
+    }
+}
+
+@mixin big-screen{
+    @media only screen and (max-width:1600) {
+        @content;
+    }
+}
